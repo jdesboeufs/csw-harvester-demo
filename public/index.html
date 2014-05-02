@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSW Harvester Demo</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">CSW Harvester Demo <span class="label label-info">beta</span></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+
+      <h3>CSW service</h3>
+      <form>
+        <div class="input-group">
+          <input type="text" class="form-control" id="cswServiceUrl" placeholder="Enter a valid CSW URL">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary" type="button">Harvest!</button>
+          </span>
+        </div>
+      </form>
+
+      <br/>
+      <div class="hidden alert alert-danger"><strong>An error has occurred.</strong> Please check your URL and refresh the page.</div>
+
+      <div id="progression" class="hidden">
+        <hr>
+        <h3>Progression</h3>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <div class="well">
+          <strong>Matched:</strong> <span id="matched"></span><br />
+          <strong>Returned:</strong> <span id="returned"></span>
+        </div>
+      </div>
+
+      <div id="records" class="hidden">
+        <hr>
+        <h3>Records found</h3>
+
+        <div class="hidden alert alert-warning"><strong>Warning!</strong> Only the first 1000 records are displayed.</div>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/main.js"></script>
+  </body>
+</html>
