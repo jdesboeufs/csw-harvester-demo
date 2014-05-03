@@ -18,7 +18,7 @@
   "homepage": "https://github.com/jdesboeufs/csw-harvester-demo",
   "dependencies": {
     "express": "^4.1.1",
-    "csw": "0.0.3",
+    "csw": "0.0.4",
     "socket.io": "git://github.com/LearnBoost/socket.io.git#1.0.0-pre2",
     "validator": "^3.11.0"
   }

@@ -19,7 +19,7 @@ io.on('connection', function(socket) {
         if (harvester || !validator.isURL(service.url, validatorOptions)) return;
 
         client = csw(service.url, { maxSockets: 2 });
-        harvester = client.harvest({ elementSetName: 'full' });
+        harvester = client.harvest({ elementSetName: 'full', namespace: 'xmlns(csw=http://www.opengis.net/cat/csw/2.0.2)' });
 
         harvester.on('error', function(err) {
             console.log(err);
